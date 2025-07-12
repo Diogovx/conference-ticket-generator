@@ -1,0 +1,33 @@
+.input-block{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.6rem;
+    gap: 1rem;
+}
+.input-block label{
+    font-weight: 500;
+}
+
+.input-background{
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    background-color: var(--Neutral-700);
+    border-radius: 1rem;
+}
+.input-block input{
+    width: 100%;
+    padding: 1rem;
+
+    background-color: transparent;
+
+    border: 0.1rem solid var(--Neutral-300);
+
+    border-radius: 1rem;
+    outline-color: var(--Neutral-0);
+}
+
+.input-block input::placeholder{
+    color: var(--Neutral-0);
+}
