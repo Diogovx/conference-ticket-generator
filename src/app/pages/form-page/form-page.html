@@ -1,0 +1,30 @@
+<div class="body">
+    <div class="container">
+        <header>
+            <img src="/images/logo-full.svg" alt="logo">
+            <div class="title-box">
+                <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
+
+                <p>Secure your spot at next year's biggest coding conference.</p>
+            </div>
+        </header>
+
+        <form #submitForm="ngForm" (ngSubmit)="verifyForm()">
+
+            <app-upload-input name="picture" [(ngModel)]="formDataModel.picture" required></app-upload-input>
+            @for (input of formInputs; track $index) {
+            <app-form-input [id]="input.id" [name]="input.name" [label]="input.label" [type]="input.type"
+                [placeholder]="input.placeholder" [(ngModel)]="formDataModel[input.name]" [email]="input.type === 'email'"></app-form-input>
+            }
+
+            <app-submit-button></app-submit-button>
+        </form>
+
+
+        <div class="attribution">
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+            Coded by <a href="https://github.com/Diogovx">Diogo Velozo Xavier</a>.
+        </div>
+    </div>
+
+</div>

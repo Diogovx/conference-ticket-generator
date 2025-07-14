@@ -10,7 +10,8 @@
     --Orange-500: hsl(7, 88%, 67%);
     --Orange-700: hsl(7, 71%, 60%);
 
-    --Gradient-text: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
+    --Gradent-text-start: hsl(7, 86%, 67%);
+    --Gradent-text-end:hsl(0, 0%, 100%);
     font-size: 10px;
 }
 *{
@@ -19,12 +20,201 @@
     box-sizing: border-box;
     font-family: "Inconsolata", monospace;
 }
+
+.body{
+    height: 100vh;
+    position: relative;
+
+
+    overflow: hidden;
+
+    color: var(--Neutral-0);
+    z-index: 1;
+}
+.container{
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+    background: url('/images/pattern-lines.svg');
+    padding: 3rem 2rem;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+}
+
+.title-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+header img{
+    margin-bottom: 1rem;
+}
+header h1{
+    font-size: 2.8rem;
+}
+header p{
+    color: var(--Neutral-300);
+    font-size: 1.8rem;
+}
 label{
     font-size: 1.8rem;
 }
 
-@media (min-width: 1440px) {
-    *{
-        font-size: 1.6rem;
+.input-info{
+    padding: 1rem 0;
+    font-size: 1.3rem;
+    color: var(--Neutral-300);
+    display: flex;
+    align-items: center;
+    gap: 1rem ;
+    font-size: 1.3rem;
+}
+.input-info.ng-invalid.ng-touched{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--Orange-700)
+}
+.input-info.ng-valid.ng-touched{
+    display: none;
+}
+
+
+@media(max-width: 720px){
+    .body{
+        background-image: url('/images/background-mobile.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .body::before{
+        content: "";
+        position: absolute;
+        height: 10rem;
+        width: 10rem;
+        top: 0;
+        right: 0;
+        background-image: url('/images/pattern-squiggly-line-top.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .body::after{
+        content: "";
+        position: absolute;
+        height: 28rem;
+        width: 28rem;
+        bottom: -4.3rem;
+        left: 0rem;
+        background-image: url('/images/pattern-squiggly-line-bottom-mobile-tablet.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .container::after{
+        content: "";
+        position: absolute;
+        height: 10rem;
+        width: 10rem;
+        bottom: 21rem;
+        right: -5rem;
+        background-image: url('/images/pattern-circle.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
+@media (min-width: 720px) and ( max-width: 1440px) {
+    .body{
+        background: url('/images/background-tablet.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+@media (min-width: 1440px){
+    .body{
+        background: url('/images/background-desktop.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .body::before{
+        content: "";
+        position: absolute;
+        height: 30rem;
+        width: 40rem;
+        top: 0;
+        right: 0;
+        background-image: url('/images/pattern-squiggly-line-top.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .body::after{
+        content: "";
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        background-image: url('/images/pattern-squiggly-line-bottom-desktop.svg');
+        background-position: bottom left;
+        background-repeat: no-repeat;
+        background-size: initial;
+    }
+    .container::before{
+        content: "";
+        position: absolute;
+        height: 16rem;
+        width: 16rem;
+        top: -6rem;
+        left: 5rem;
+        background-image: url('/images/pattern-circle.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .container::after{
+        content: "";
+        position: absolute;
+        height: 16rem;
+        width: 16rem;
+        bottom: 20rem;
+        right: 35rem;
+        background-image: url('/images/pattern-circle.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    header{
+        max-width: 50%;
+    }
+    header h1{
+        font-size: 5rem;
+    }
+    form{
+        width: 25%;
+    }
+        .input-info{
+        font-size: 1.3rem;
     }
 }

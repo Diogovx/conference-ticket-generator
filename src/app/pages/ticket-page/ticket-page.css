@@ -1,0 +1,114 @@
+.emphasis-name{
+    background: -webkit-linear-gradient(45deg,var(--Gradent-text-start), var(--Gradent-text-end));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.emphasis-email{
+    color: var(--Orange-500);
+}
+.container{
+    gap: 8rem;
+}
+
+
+
+.ticket-block{
+    position: relative;
+    background: url('/images/pattern-ticket.svg')  no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    gap: 2rem;
+}
+.ticket-data{
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 3rem;
+}
+.ticket-block .ticket-header{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    color: var(--Neutral-300);
+}
+.ticket-header img{
+    height: 2rem;
+}
+.ticket-header > span{
+    align-self: center;
+}
+
+.ticket-data footer{
+    display: flex;
+    gap: 1rem;
+}
+.ticket-data footer > img{
+    height: 3.5rem;
+    border-radius: 0.5rem;
+}
+
+.ticket-data .user-info{
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.ticket-data .username{
+    font-size: 1.5rem;
+}
+.ticket-data .user-github{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--Neutral-300);
+}
+.ticket-data .user-github img{
+    height: 1.5rem;
+}
+
+.ticket-block .ticket-id{
+    display: flex;
+    align-items: center;
+    transform: rotate(90deg);
+
+    color: var(--Neutral-500);
+    font-size: 1.6rem;
+}
+
+@media(min-width: 1440px){
+    .title-box > p{
+        max-width: 55%;
+        line-height: 2rem;
+    }
+    .ticket-block{
+        height: 23.3rem;
+        width: 50rem;
+        gap: 4rem;
+        justify-content: space-between;
+    }
+    .ticket-data{
+        justify-content: space-between;
+    }
+    .ticket-header img{
+        height: 3.4rem;
+    }
+    .ticket-data .username{
+        font-size: 1.6rem;
+    }
+
+    .ticket-data footer img{
+        height: 5rem;
+    }
+    .ticket-block .ticket-id{
+        padding: 1.3rem;
+        font-size: 2.2rem;
+    }
+
+}

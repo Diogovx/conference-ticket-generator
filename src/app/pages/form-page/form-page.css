@@ -1,0 +1,21 @@
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.attribution {  
+    font-size: 11px;
+    text-align: center; 
+}
+.attribution a {
+    font-size: 11px;    
+    color: var(--Neutral-300); 
+}
+
+@media(min-width: 1440px){
+    form{
+        width: 25%;
+    }
+}

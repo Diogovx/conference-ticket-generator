@@ -1,11 +1,25 @@
-<div class="input-block">
-    <label>Upload Avatar</label>
-    <div class="upload-input">
-        <img src="/images/icon-upload.svg" alt="upload">
+<fieldset class="input-block">
+    <label for="upload">Upload Avatar</label>
+    <div class="upload-input" [class.is-dragging]="isDragging" [class.disabled]="disabled" (click)="onContainerClick()">
+        @if(value){
+        <div class="image-container">
+            <img [src]="value" alt="Avatar preview">
+        </div>
+        <nav class="image-actions">
+            <button type="button" (click)="removeImage()">Remove image</button>
+            <button type="button" (click)="fileInput.click()">Change image</button>
+        </nav>
+        }
+        @else{
+        <div class="image-container">
+            <img src="/images/icon-upload.svg" alt="Upload an image" class="upload-icon">
+        </div>
         <p>Drag and drop or click to upload</p>
+        }
+        <input name="upload" type="file" #fileInput (change)="onFileSelected($event)" accept="image/*" class="hidden-input">
     </div>
-</div>
-<div class="upload-info">
+</fieldset>
+<aside class="input-info">
     <img src="/images/icon-info.svg" alt="">
     <small>Upload your photo (JPG or PNG, max size: 500KB).</small>
-</div>
+</aside>
