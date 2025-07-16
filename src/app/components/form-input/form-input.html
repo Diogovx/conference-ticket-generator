@@ -2,7 +2,7 @@
     <label [for]="name">{{ label }}</label>
     <div class="input-details">
             <input [id]="id" [name]="name" [type]="type" [placeholder]="placeholder" [value]="value"
-                [(ngModel)]="value" (blur)="onTouched()" [disabled]="disabled">
+                (input)="onInputChange($event)" (blur)="onTouched()" [disabled]="disabled">
         @if (ngControl.invalid && ngControl.touched) {
         <div class="input-info">
             <img src="/images/icon-info.svg" alt="Ícone de erro">

@@ -18,10 +18,16 @@ export class FormInput implements ControlValueAccessor {
   
   value: any;
   onChange: any = () => {};
+
+    onInputChange(event: Event): void {
+    const inputElement = event.target as HTMLInputElement;
+    const value = inputElement.value;
+    this.onChange(value);
+  }
+
   onTouched: any = () => {};
   disabled = false;
 
-  // A injeção de NgControl é a única coisa que precisamos. Está correto.
   constructor(@Optional() @Self() public ngControl: NgControl) {
     if (this.ngControl) {
       this.ngControl.valueAccessor = this;

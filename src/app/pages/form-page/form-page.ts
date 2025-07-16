@@ -19,7 +19,13 @@ export class FormPage {
     {id: 3, name: "githubUsername", label: "GitHub Username", type: "text", placeholder: "@yourusername"}
   ];
 
-  formDataModel: any = {};
+  formDataModel: any = {
+    fullName: '',
+    emailAddress: '',
+    githubUsername: '',
+    picture: null,
+    submissionDate: new Date()
+  };
 
   constructor(
     private formDataService: FormData,
