@@ -1,59 +1,65 @@
-# ConferenceTicketGenerator
+# Frontend Mentor - Conference ticket generator solution
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.6.
+This is a solution to the [Conference ticket generator challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/conference-ticket-generator-oq5gFIU12w). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+
+## Table of contents
+
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+- [Author](#author)
+- [Development server](#development-server)
+
+## Overview
+
+### The challenge
+
+Users should be able to:
+
+- Complete the form with their details
+- Receive form validation messages if:
+  - Any field is missed
+  - The email address is not formatted correctly
+  - The avatar upload is too big or the wrong image format
+- Complete the form only using their keyboard
+- Have inputs, form field hints, and error messages announced on their screen reader
+- See the generated conference ticket when they successfully submit the form
+- View the optimal layout for the interface depending on their device's screen size
+- See hover and focus states for all interactive elements on the page
+
+### Screenshot
+
+![screenshot](/public/images/Screenshot_1.png)
+
+![screenshot](/public/images/Screenshot_2.png)
+
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- [Angular](https://angular.dev/) - JS library
+
+### What I learned
+
+The project was important for my first experience with the Angular framework. It helped me understand SPAs and TypeScript.
+I learned how to consume APIs with the framework and the concept of componentization.
+
+## Author
+
+- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/Diogovx)
 
 ## Development server
 
 To start a local development server, run:
 
 ```bash
-ng serve
+npm start
 ```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
