@@ -17,8 +17,8 @@ export class TicketPage implements OnInit{
   
   ngOnInit(): void {
       this.ticketsData = this._formDataService.getFormData();
-      /*if(!this.ticketsData){
-        this.router.navigate(['/form'])
-      }*/
+      if(!this.ticketsData){
+        this._router.navigate(['/form'])
+      }
   }
 }

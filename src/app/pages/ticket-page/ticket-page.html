@@ -1,5 +1,6 @@
 <div class="body">
     <div class="container">
+        @if(ticketsData){
         <header>
             <img src="/images/logo-full.svg" alt="logo">
             <div class="title-box">
@@ -13,7 +14,7 @@
             <div class="ticket-data">
                 <div class="ticket-header">    
                     <img src="/images/logo-full.svg" alt="logo">
-                    <span>{{ ticketsData.submissionDate | date: 'MMM d, y' }} / Austin, TX</span>
+                    <span>{{ ticketsData.submissionDate | date: 'MMM d, y' }} / {{ ticketsData.location }}</span>
                 </div>
                 <footer>
                     <img [src]="ticketsData.picture" alt="profile picture">
@@ -30,5 +31,8 @@
                 #01609
             </div>
         </div>
+    } @else {
+        <p>Loading Ticket...</p>
+    }
     </div>
 </div>

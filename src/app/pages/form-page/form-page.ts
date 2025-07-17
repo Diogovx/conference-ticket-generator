@@ -1,10 +1,11 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, inject, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { FormInput } from '../../components/form-input/form-input';
 import { SubmitButton } from '../../components/submit-button/submit-button';
 import { UploadInput } from '../../components/upload-input/upload-input';
 import { FormData } from '../../shared/form-data';
 import { Router } from '@angular/router';
+import { LocationService } from '../../shared/location';
 
 @Component({
   selector: 'app-form-page',
@@ -13,6 +14,11 @@ import { Router } from '@angular/router';
   styleUrl: './form-page.css'
 })
 export class FormPage {
+  private readonly _formDataService = inject(FormData);
+  private readonly _router = inject(Router);
+  readonly _locationService = inject(LocationService);
+
+
     formInputs = [
     {id: 1, name: "fullName" ,label: "Full Name", type: "text", placeholder: ""},
     {id: 2, name: "emailAddress",label: "Email Address", type: "email", placeholder: "example@email.com"},
@@ -27,19 +33,23 @@ export class FormPage {
     submissionDate: new Date()
   };
 
-  constructor(
-    private formDataService: FormData,
-    private router: Router 
-  ){}
 
   @ViewChild('submitForm') submitForm!: NgForm;
 
-  verifyForm(){
+  async verifyForm(){
     if(this.submitForm.invalid){
       this.submitForm.form.markAllAsTouched();
       return;
     }
-    this.formDataService.setFormatData(this.formDataModel);
-    this.router.navigate(['/ticket']);
+
+    const userLocation = await this._locationService.getLocation()
+
+    const ticketData = {
+      ...this.formDataModel,
+      location: userLocation
+    }
+
+    this._formDataService.setFormatData(ticketData);
+    this._router.navigate(['/ticket']);
   }
 }
