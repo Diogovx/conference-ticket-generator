@@ -1,5 +1,5 @@
 <div class="body">
-    <div class="container">
+    <main class="container">
         @if(ticketsData){
         <header>
             <img src="/images/logo-full.svg" alt="logo">
@@ -10,14 +10,15 @@
             </div>
         </header>
 
-        <div class="ticket-block">
-            <div class="ticket-data">
+        <article class="ticket-block" aria-labelledby="ticket-title">
+            <h2 id="ticket-title" class="sr-only">Your Conference Ticket</h2>
+            <section class="ticket-data">
                 <div class="ticket-header">    
                     <img src="/images/logo-full.svg" alt="logo">
-                    <span>{{ ticketsData.submissionDate | date: 'MMM d, y' }} / {{ ticketsData.location }}</span>
+                    <time>{{ ticketsData.submissionDate | date: 'MMM d, y' }} / {{ ticketsData.location }}</time>
                 </div>
                 <footer>
-                    <img [src]="ticketsData.picture" alt="profile picture">
+                    <img [src]="ticketsData.picture" alt="profile picture of {{ticketsData.fullName}}">
                     <div class="user-info">
                         <p class="username">{{ ticketsData.fullName }}</p>
                         <p class="user-github">
@@ -26,13 +27,13 @@
                         </p>
                     </div>
                 </footer>
-            </div>
-            <div class="ticket-id">
+            </section>
+            <aside class="ticket-id">
                 #01609
-            </div>
-        </div>
+            </aside>
+        </article>
     } @else {
         <p>Loading Ticket...</p>
     }
-    </div>
+    </main>
 </div>

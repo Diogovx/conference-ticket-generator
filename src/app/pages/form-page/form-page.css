@@ -15,7 +15,10 @@ form{
 }
 
 @media(min-width: 1440px){
-    form{
+    section{
         width: 25%;
+    }
+    form{
+        width: 100%;
     }
 }

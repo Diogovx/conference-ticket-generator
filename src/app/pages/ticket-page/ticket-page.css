@@ -38,7 +38,7 @@
 .ticket-header img{
     height: 2rem;
 }
-.ticket-header > span{
+.ticket-header > time{
     align-self: center;
 }
 
