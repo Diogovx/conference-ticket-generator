@@ -3,11 +3,11 @@
     <div class="input-details">
             <input [id]="id" [name]="name" [type]="type" [placeholder]="placeholder" [value]="value"
                 (input)="onInputChange($event)" (blur)="onTouched()" [disabled]="disabled">
+            </div>
         @if (ngControl.invalid && ngControl.touched) {
-        <div class="input-info">
-            <img src="/images/icon-info.svg" alt="Ícone de erro">
-            <small>Please enter a valid {{name.toLowerCase()}}.</small>
-        </div>
-        }
+    <div class="input-info">
+        <img src="/images/icon-info.svg" alt="Ícone de erro">
+        <small class="error-msg">Please enter a valid {{name.toLowerCase()}}.</small>
     </div>
+        }
 </div>
