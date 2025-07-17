@@ -21,7 +21,7 @@ export class LocationService {
           const lon = position.coords.longitude;
 
           try{
-            const url = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=pt-BR`;
+            const url = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`;
             const response: any = await firstValueFrom(this._http.get(url));
 
             const city = response.city || response.town || response.village || '';
